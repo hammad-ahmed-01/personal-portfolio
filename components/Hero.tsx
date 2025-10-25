@@ -124,33 +124,6 @@ const Hero = () => {
               Download Resume
             </motion.button>
           </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="flex justify-center space-x-6 pt-8"
-          >
-            <motion.a
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              href="https://github.com/hammad-ahmed-01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-            >
-              <FaGithub className="w-8 h-8" />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, rotate: -5 }}
-              href="https://www.linkedin.com/in/hammad-ahmed-4676a6225/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-            >
-              <FaLinkedin className="w-8 h-8" />
-            </motion.a>
-          </motion.div>
         </motion.div>
       </div>
 

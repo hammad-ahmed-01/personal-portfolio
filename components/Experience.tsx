@@ -7,7 +7,8 @@ import { FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa'
 const Experience = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.05,
+    rootMargin: '50px 0px',
   })
 
   const experiences = [
@@ -103,23 +104,23 @@ const Experience = () => {
   ]
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
+        staggerChildren: 0.05,
+        delayChildren: 0.05,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 1, y: 0 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.3,
         ease: "easeOut",
       },
     },
@@ -174,9 +175,9 @@ const Experience = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={inView ? "visible" : "visible"}
           className="text-center"
-          style={{ minHeight: '200px' }}
+          style={{ minHeight: '200px', opacity: 1 }}
         >
           <motion.h1 
             variants={itemVariants} 
