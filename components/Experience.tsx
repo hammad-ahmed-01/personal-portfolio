@@ -107,18 +107,19 @@ const Experience = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut",
       },
     },
@@ -175,6 +176,7 @@ const Experience = () => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="text-center"
+          style={{ minHeight: '200px' }}
         >
           <motion.h1 
             variants={itemVariants} 
