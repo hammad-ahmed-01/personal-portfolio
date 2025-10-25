@@ -14,7 +14,7 @@ const Hero = () => {
   const downloadResume = () => {
     // You can replace this with your actual resume file
     const link = document.createElement('a')
-    link.href = '/Hammad\'s Resume.pdf'
+    link.href = '/Hammad_Ahmed_Resume.pdf'
     link.download = 'Hammad_Ahmed_Resume.pdf'
     link.click()
   }
