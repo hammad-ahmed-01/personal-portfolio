@@ -13,6 +13,26 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: "VendorPot",
+      position: "Senior Software Engineer",
+      duration: "Current",
+      location: "GCC-focused Product Team",
+      description: "Building VendorPot, an AI-powered intelligent SaaS and Agentic AI marketplace that connects global technology vendors with verified buyers in the GCC through a trust-first procurement ecosystem.",
+      achievements: [
+        "Led end-to-end engineering across core platform modules using Next.js, NestJS, and Supabase to deliver scalable marketplace and procurement workflows",
+        "Built and evolved backend services and API integrations with a microservices-first mindset for maintainability and growth",
+        "Collaborated across product and engineering to ship reliable SaaS features for vendors and buyers in global and GCC markets",
+        "Implemented GCC-aligned SaaS security controls and practical policy definitions as part of platform engineering ownership",
+        "Strengthened multi-tenant protection with Row-Level Security (RLS), tenant-aware access patterns, and secure query boundaries",
+        "Hardened APIs and edge traffic using Cloudflare controls including WAF, DDoS resilience, and rate limiting",
+        "Improved identity and access posture with least-privilege authorization, RBAC design, and secure session practices",
+        "Supported compliance and operations readiness through API documentation validation, logging standards, and SLA documentation"
+      ],
+      technologies: ["Next.js", "NestJS", "Supabase", "Google Cloud", "Cloudflare", "Microservices", "RLS", "RBAC", "WAF", "DDoS Protection"],
+      linkedin: "https://www.linkedin.com/company/vendorpotllc/",
+      color: "from-cyan-500 to-blue-600"
+    },
+    {
       company: "RAISC AI",
       position: "Cofounder - Tech",
       duration: "Current",
@@ -35,7 +55,7 @@ const Experience = () => {
     {
       company: "Data Pulse Technologies",
       position: "Senior Full Stack Developer",
-      duration: "Current",
+      duration: "Previous",
       location: "Remote",
       description: "Leading development for large-scale systems and managing production environments",
       achievements: [
@@ -181,19 +201,19 @@ const Experience = () => {
         >
           <motion.h1 
             variants={itemVariants} 
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-5 sm:mb-6"
           >
             Professional Experience
           </motion.h1>
           
           <motion.div 
             variants={itemVariants} 
-            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12"
+            className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 sm:mb-12"
           ></motion.div>
 
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto px-2 sm:px-0"
           >
             My journey in software development and the companies that have shaped my career
           </motion.p>
@@ -201,16 +221,16 @@ const Experience = () => {
           {/* Career Progress Timeline */}
           <motion.div 
             variants={itemVariants}
-            className="mb-16 max-w-4xl mx-auto"
+            className="mb-12 sm:mb-16 max-w-4xl mx-auto"
           >
-            <div className="bg-gradient-to-r from-gray-700/50 to-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Experience Highlights</h3>
+            <div className="bg-gradient-to-r from-gray-700/50 to-gray-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-600/30">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 text-center">Experience Highlights</h3>
               <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
                 {experiences.map((exp, index) => (
                   <motion.div
                     key={exp.company}
                     whileHover={{ scale: 1.05, y: -5 }}
-                    className="flex flex-col items-center text-center flex-1"
+                    className="flex flex-col items-center text-center w-full md:flex-1"
                   >
                     <motion.div
                       animate={{ 
@@ -230,8 +250,8 @@ const Experience = () => {
                     >
                       <div className="w-6 h-6 bg-white rounded-full"></div>
                     </motion.div>
-                    <h4 className="text-sm font-semibold text-white mb-1">{exp.company}</h4>
-                    <p className="text-xs text-gray-400">{exp.position}</p>
+                    <h4 className="text-sm font-semibold text-white mb-1 leading-tight">{exp.company}</h4>
+                    <p className="text-xs text-gray-400 leading-tight">{exp.position}</p>
                     <p className="text-xs text-blue-400 font-medium">{exp.duration}</p>
                   </motion.div>
                 ))}
@@ -248,9 +268,9 @@ const Experience = () => {
                 key={exp.company}
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-gray-700/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30 hover:border-gray-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-800/20"
+                className="bg-gray-700/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-600/30 hover:border-gray-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-800/20"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                   {/* Company Info */}
                   <div className="lg:col-span-1 text-left">
                     <motion.div 
@@ -270,7 +290,7 @@ const Experience = () => {
                         className={`w-6 h-6 bg-gradient-to-r ${exp.color} rounded-full mr-4 shadow-lg`}
                       ></motion.div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">{exp.company}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">{exp.company}</h3>
                         <p className="text-gray-400">{exp.position}</p>
                       </div>
                     </motion.div>
@@ -298,7 +318,7 @@ const Experience = () => {
                     
                     <motion.p 
                       whileHover={{ scale: 1.02 }}
-                      className="text-gray-300 mb-6 leading-relaxed"
+                      className="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed"
                     >
                       {exp.description}
                     </motion.p>
@@ -322,7 +342,7 @@ const Experience = () => {
                               rotate: 2,
                               backgroundColor: "rgba(59, 130, 246, 0.2)"
                             }}
-                            className="px-3 py-1 bg-gray-600/50 text-gray-300 text-xs rounded-full border border-gray-500/30 hover:border-blue-400/50 transition-all duration-300 cursor-default"
+                          className="px-2.5 sm:px-3 py-1 bg-gray-600/50 text-gray-300 text-[11px] sm:text-xs rounded-full border border-gray-500/30 hover:border-blue-400/50 transition-all duration-300 cursor-default"
                           >
                             {tech}
                           </motion.span>
@@ -359,7 +379,7 @@ const Experience = () => {
                   <div className="lg:col-span-2 text-left">
                     <motion.h4 
                       whileHover={{ scale: 1.05 }}
-                      className="text-lg font-semibold text-white mb-6 text-left"
+                      className="text-base sm:text-lg font-semibold text-white mb-5 sm:mb-6 text-left"
                     >
                       Key Achievements:
                     </motion.h4>
@@ -375,11 +395,11 @@ const Experience = () => {
                             scale: 1.02,
                             backgroundColor: "rgba(55, 65, 81, 0.3)"
                           }}
-                          className="p-3 rounded-lg transition-all duration-300"
+                          className="p-2.5 sm:p-3 rounded-lg transition-all duration-300"
                         >
                           <motion.span 
                             whileHover={{ color: "#ffffff" }}
-                            className="text-gray-300 leading-relaxed transition-colors duration-300"
+                            className="text-sm sm:text-base text-gray-300 leading-relaxed transition-colors duration-300"
                           >
                             • {achievement}
                           </motion.span>
@@ -395,10 +415,10 @@ const Experience = () => {
           {/* Statistics Widget */}
           <motion.div 
             variants={itemVariants}
-            className="mt-16 max-w-6xl mx-auto"
+            className="mt-12 sm:mt-16 max-w-6xl mx-auto"
           >
-            <div className="bg-gradient-to-r from-gray-700/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">Career Highlights</h3>
+            <div className="bg-gradient-to-r from-gray-700/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-5 sm:p-8 border border-gray-600/30">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">Career Highlights</h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                  <motion.div
                    whileHover={{ scale: 1.05, rotate: 2 }}

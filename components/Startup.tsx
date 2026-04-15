@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaCheck, FaArrowRight, FaBrain, FaShieldAlt, FaChartLine, FaRobot } from 'react-icons/fa'
+import { FaArrowRight, FaBrain, FaShieldAlt, FaChartLine, FaRobot } from 'react-icons/fa'
 
 const Startup = () => {
   const [ref, inView] = useInView({
@@ -105,27 +105,27 @@ const Startup = () => {
           animate={inView ? "visible" : "hidden"}
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+          <motion.div variants={itemVariants} className="text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold gradient-text mb-5 sm:mb-6">
               Our Work In Action
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto mb-8"></div>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto mb-6 sm:mb-8"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Left Side - Content */}
-            <motion.div variants={itemVariants} className="space-y-8">
+            <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
                   RAISC Mental Health AI
                 </h2>
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
                   Our flagship FYP project turned Startup, RAISC, is an AI-powered mental wellness platform that helps individuals track, understand, and improve their mental health through intelligent insights and personalized recommendations.
                 </p>
               </div>
 
               {/* Features */}
-              <div className="space-y-6">
+              <div className="space-y-5 sm:space-y-6">
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
@@ -139,8 +139,8 @@ const Startup = () => {
                       <feature.icon className="w-6 h-6 text-white" />
                     </motion.div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                      <p className="text-gray-300">{feature.description}</p>
+                      <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                      <p className="text-sm sm:text-base text-gray-300">{feature.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -154,7 +154,7 @@ const Startup = () => {
                 href="https://raisc.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 border-2 border-pink-500 text-white font-semibold rounded-full hover:bg-pink-500/10 hover:border-pink-400 transition-all duration-300 gap-2"
+                className="inline-flex items-center justify-center w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-pink-500 text-white font-semibold rounded-full hover:bg-pink-500/10 hover:border-pink-400 transition-all duration-300 gap-2"
               >
                 Visit RAISC
                 <FaArrowRight className="w-4 h-4" />
@@ -166,8 +166,8 @@ const Startup = () => {
               variants={itemVariants}
               className="relative"
             >
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-pink-500/30 shadow-2xl">
-                <h3 className="text-2xl font-bold text-white mb-8 text-center">Technical Architecture</h3>
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-5 sm:p-8 border border-pink-500/30 shadow-2xl">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">Technical Architecture</h3>
                 
                 {/* Tech Stack Flow */}
                 <div className="space-y-6">

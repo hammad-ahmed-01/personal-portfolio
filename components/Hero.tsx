@@ -20,7 +20,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" className="screen-safe-min gradient-bg flex items-center justify-center relative overflow-hidden pt-20 pb-12 sm:pb-8">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -61,19 +61,19 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-max text-center z-10">
+      <div className="container-max text-center z-10 px-1 sm:px-0">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
           >
             Hi There! I'm{' '}
             <span className="gradient-text">Hammad</span>
@@ -83,18 +83,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-2xl md:text-4xl text-gray-300 mb-8 font-light"
+            className="text-xl sm:text-2xl md:text-4xl text-gray-300 mb-6 sm:mb-8 font-light"
           >
-            I'm a Full Stack Web Developer
+            I'm a Full Stack Software Engineer
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed px-2 sm:px-0"
           >
-            Experienced Full Stack Developer specializing in Laravel, React, Next.js, Django, and Spring Boot. Currently leading software development projects and building scalable, high-performance web applications for international markets.
+            Senior Software Engineer focused on building scalable SaaS products and microservices, with hands-on experience delivering secure multi-tenant platforms for GCC and European markets.
           </motion.p>
 
           {/* Action Buttons */}
@@ -102,13 +102,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center gap-2"
+              className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <FaEnvelope className="w-5 h-5" />
               Get In Touch
@@ -118,7 +118,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={downloadResume}
-              className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center gap-2"
+              className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <FaDownload className="w-5 h-5" />
               Download Resume
@@ -132,7 +132,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

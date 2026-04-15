@@ -15,6 +15,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -48,7 +55,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold gradient-text"
+            className="text-lg sm:text-2xl font-bold gradient-text"
           >
             Hammad Ahmed
           </motion.div>
@@ -73,7 +80,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -88,7 +97,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/10 backdrop-blur-md rounded-lg mt-2 overflow-hidden border border-white/20"
+            className="md:hidden bg-white/10 backdrop-blur-md rounded-lg mt-2 mb-3 overflow-hidden border border-white/20"
           >
             {navItems.map((item, index) => (
               <motion.button
@@ -97,7 +106,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300"
+                className="block w-full text-left px-4 py-3.5 text-white hover:bg-white/10 transition-colors duration-300 active:bg-white/20"
               >
                 {item.name}
               </motion.button>

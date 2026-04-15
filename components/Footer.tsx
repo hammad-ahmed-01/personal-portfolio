@@ -64,20 +64,20 @@ const Footer = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="py-12"
+          className="py-10 sm:py-12"
         >
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
             {/* Brand Section */}
             <div className="text-center md:text-left">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="mb-4"
               >
-                <h3 className="text-2xl font-bold gradient-text">Hammad Ahmed</h3>
+                <h3 className="text-xl sm:text-2xl font-bold gradient-text">Hammad Ahmed</h3>
                 <p className="text-gray-400 text-sm mt-1">Full Stack Developer</p>
               </motion.div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
                 Building scalable web applications and turning ideas into reality through code.
               </p>
             </div>
@@ -103,7 +103,7 @@ const Footer = () => {
             <div className="text-center md:text-left">
               <h4 className="text-white font-semibold mb-4">Get In Touch</h4>
               <div className="space-y-2">
-                <p className="text-gray-400 text-sm">hammad_ahmed_123@outlook.com</p>
+                <p className="text-gray-400 text-sm break-all">hammad_ahmed_123@outlook.com</p>
                 <p className="text-gray-400 text-sm">Islamabad, Pakistan</p>
                 <div className="flex justify-center md:justify-start space-x-4 mt-4">
                   {socialLinks.map((social, index) => (
@@ -129,8 +129,8 @@ const Footer = () => {
           <div className="border-t border-gray-700/50 my-8"></div>
 
           {/* Bottom Section */}
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 text-center md:text-left">
+            <div className="flex items-center space-x-2 text-gray-400 text-xs sm:text-sm">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
@@ -140,7 +140,7 @@ const Footer = () => {
               <span>© {currentYear} Hammad Ahmed. All rights reserved.</span>
             </div>
 
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
+            <div className="flex items-center space-x-2 text-gray-400 text-xs sm:text-sm">
               <span>Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}

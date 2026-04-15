@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaGithub, FaExternalLinkAlt, FaPlay } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -74,26 +74,26 @@ const Projects = () => {
         >
           <motion.h1 
             variants={itemVariants} 
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-5 sm:mb-6"
           >
             Personal Projects
           </motion.h1>
           
           <motion.div 
             variants={itemVariants} 
-            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12"
+            className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 sm:mb-12"
           ></motion.div>
 
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-300 mb-16 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-300 mb-12 sm:mb-16 max-w-3xl mx-auto px-2 sm:px-0"
           >
             Some hobby projects I've worked on in my spare time to explore different technologies and have fun coding
           </motion.p>
 
           <motion.div 
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
           >
             {projects.map((project, index) => (
               <motion.div
@@ -102,7 +102,7 @@ const Projects = () => {
                 whileHover={{ y: -10 }}
                 className="group cursor-pointer"
               >
-                <div className="bg-gradient-to-r from-gray-700/50 to-gray-800/50 border border-gray-600/30 rounded-2xl overflow-hidden hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-800/20">
+                <div className="h-full bg-gradient-to-r from-gray-700/50 to-gray-800/50 border border-gray-600/30 rounded-2xl overflow-hidden hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-800/20">
                   {/* Project Image */}
                   <div className="relative overflow-hidden">
                     <img
@@ -125,11 +125,11 @@ const Projects = () => {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 mb-4 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">
                       {project.description}
                     </p>
                     

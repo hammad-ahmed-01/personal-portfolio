@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaLinkedin, FaEnvelope, FaGithub, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaLinkedin, FaEnvelope, FaGithub, FaMapMarkerAlt } from 'react-icons/fa'
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -108,19 +108,19 @@ const Contact = () => {
         >
           <motion.h1 
             variants={itemVariants} 
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-5 sm:mb-6"
           >
             Get In Touch
           </motion.h1>
           
           <motion.div 
             variants={itemVariants} 
-            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12"
+            className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 sm:mb-12"
           ></motion.div>
 
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-300 mb-16 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-300 mb-12 sm:mb-16 max-w-3xl mx-auto px-2 sm:px-0"
           >
             Drop by & say Hello. I'm always excited to work on new projects and collaborate with amazing people.
           </motion.p>
@@ -128,7 +128,7 @@ const Contact = () => {
           {/* Contact Methods */}
           <motion.div 
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 mb-12 sm:mb-16"
           >
             {contactMethods.map((method, index) => (
               <motion.div
@@ -137,7 +137,7 @@ const Contact = () => {
                 whileHover={{ y: -10 }}
                 className="group cursor-pointer"
               >
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-800/20 min-h-[280px] flex flex-col justify-center">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-5 md:p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-800/20 min-h-[250px] sm:min-h-[280px] flex flex-col justify-center">
                   <div className="text-center">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
@@ -145,10 +145,10 @@ const Contact = () => {
                     >
                       <method.icon className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                       {method.title}
                     </h3>
-                    <p className={`text-gray-400 mb-4 leading-relaxed ${method.title === 'Email' ? 'break-all text-xs md:text-sm' : 'text-sm'}`}>
+                    <p className={`text-gray-400 mb-4 leading-relaxed ${method.title === 'Email' ? 'break-all text-xs sm:text-sm' : 'text-sm'}`}>
                       {method.value}
                     </p>
                     {method.link ? (
@@ -158,9 +158,9 @@ const Contact = () => {
                         href={method.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-4 py-2 bg-gray-700/50 text-white rounded-full hover:bg-gray-600/50 transition-colors duration-300"
+                        className="inline-flex items-center justify-center min-h-[42px] px-4 py-2 bg-gray-700/50 text-white rounded-full hover:bg-gray-600/50 transition-colors duration-300"
                       >
-                        {method.title === 'Email' ? 'Copy Email' : 'Visit'}
+                        {method.title === 'Email' ? 'Send Email' : 'Visit'}
                       </motion.a>
                     ) : (
                       <span className="inline-block px-4 py-2 bg-gray-700/50 text-gray-400 rounded-full">
@@ -176,10 +176,10 @@ const Contact = () => {
           {/* Call to Action */}
           <motion.div 
             variants={itemVariants}
-            className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30 max-w-4xl mx-auto"
+            className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-2xl p-5 sm:p-8 border border-gray-600/30 max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to work together?</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Ready to work together?</h3>
+            <p className="text-sm sm:text-base text-gray-300 mb-6">
               I'm currently available for freelance projects and full-time opportunities. 
               Let's discuss how we can bring your ideas to life!
             </p>
@@ -188,7 +188,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={copyEmail}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <FaEnvelope className="w-5 h-5" />
                 Send Email
@@ -199,7 +199,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/hammad-ahmed-4676a6225/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <FaLinkedin className="w-5 h-5" />
                 Connect on LinkedIn

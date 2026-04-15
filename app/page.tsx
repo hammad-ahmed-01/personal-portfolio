@@ -19,13 +19,13 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Hammad Ahmed - Full Stack Developer',
-  description: 'Experienced Full Stack Developer specializing in Laravel, React, Next.js, Django, and Spring Boot. Currently working at Data Pulse Technologies.',
-  keywords: 'Full Stack Developer, Laravel, React, Next.js, Django, Spring Boot, Web Development',
+  title: 'Hammad Ahmed - Software Engineer',
+  description: 'Senior Software Engineer building AI-powered SaaS platforms and microservices with Next.js, NestJS, Supabase, Google Cloud, and Cloudflare, including secure multi-tenant workflows.',
+  keywords: 'Senior Software Engineer, Full Stack, Microservices, Next.js, NestJS, Supabase, Google Cloud, Cloudflare, SaaS Security, Multi-Tenant Architecture, Web Development',
   authors: [{ name: 'Hammad Ahmed' }],
   openGraph: {
-    title: 'Hammad Ahmed - Full Stack Developer',
-    description: 'Experienced Full Stack Developer specializing in modern web technologies',
+    title: 'Hammad Ahmed - Senior Software Engineer',
+    description: 'Senior Software Engineer specializing in multi-stack SaaS product development, microservices architecture, and secure cloud-native systems',
     type: 'website',
   },
 }
