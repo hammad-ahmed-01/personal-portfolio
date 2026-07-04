@@ -105,7 +105,7 @@ const VideoResume = () => {
             variants={itemVariants}
             className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-5 sm:mb-6"
           >
-            Meet Me in <span className="gradient-text">60 Seconds</span>
+            Meet Me in <span className="gradient-text">2 minutes</span>
           </motion.h2>
 
           <motion.div
