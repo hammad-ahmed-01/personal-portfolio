@@ -8,6 +8,7 @@ import VideoResume from '../components/VideoResume'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Experience from '../components/Experience'
+import ExecutionPlan from '../components/ExecutionPlan'
 import Startup from '../components/Startup'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -39,6 +40,7 @@ export default function Home() {
       <About />
       <VideoResume />
       <Skills />
+      <ExecutionPlan />
       <Experience />
       <Startup />
       <Projects />
