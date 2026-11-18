@@ -26,7 +26,7 @@ const Hero = () => {
             I take a client problem through architecture, security, and code, then stay on it in production.
           </p>
           <p className="text-sm sm:text-base font-extralight text-ash mb-8">
-            2+ years shipping multi-tenant SaaS and AI products for GCC and European teams.
+            3+ years shipping multi-tenant SaaS and AI products for GCC and European teams.
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <button onClick={scrollToContact} className="btn-pill">
