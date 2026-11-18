@@ -1,73 +1,47 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+const loops = [
+  {
+    title: 'Discover',
+    detail: 'Sit with the client, map the workflow, and decide what is actually worth building.',
+  },
+  {
+    title: 'Architect',
+    detail: 'Multi-tenant services, API boundaries, RLS, RBAC, and the controls that keep a SaaS safe.',
+  },
+  {
+    title: 'Operate',
+    detail: 'Ship it, harden the edge, watch production, and stay accountable after launch.',
+  },
+]
 
 const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  }
-
   return (
-    <section id="about" className="section-padding bg-gray-900">
-      <div className="container-max">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="text-center"
-        >
-          <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-5 sm:mb-6">
-            About Me
-          </motion.h1>
-          
-          <motion.div variants={itemVariants} className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 sm:mb-12"></motion.div>
-
-          <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-5 sm:p-8 md:p-12 border border-gray-700/50">
-              <motion.p
-                variants={itemVariants}
-                className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-6 sm:mb-8"
-              >
-                I am a <span className="text-white font-semibold">Computer Science graduate from NUST</span> and Senior Software Engineer with 2+ years of experience building scalable web applications for international clients and startups. My core product engineering stack includes{' '}
-                <span className="text-blue-400 font-semibold">Next.js, NestJS, Laravel, Django, and Spring Boot</span>, supported by strong expertise in microservices, multi-tenant architecture, database design, and cloud-native system development.
-              </motion.p>
-
-              <motion.p
-                variants={itemVariants}
-                className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed"
-              >
-                I have led enterprise-grade platform development, optimized high-volume production databases, and delivered client-centric SaaS solutions across{' '}
-                <span className="text-purple-400 font-semibold">property management, healthcare, and B2B domains</span> for GCC and European markets. Alongside application development, I work with infrastructure and platform tooling such as{' '}
-                <span className="text-green-400 font-semibold">Supabase, Google Cloud, and Cloudflare</span>, and contribute to SaaS security through practical policy alignment, Row-Level Security (RLS), API hardening with WAF and rate limiting, IAM/RBAC controls, and compliance-facing documentation including SLA standards.
-              </motion.p>
-            </div>
-          </motion.div>
-        </motion.div>
+    <section id="about" className="section-pad band-iris">
+      <div className="page-wrap grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="lg:col-span-5">
+          <p className="kicker">How I work</p>
+          <h2 className="display text-[36px] sm:text-[42px] leading-[1.15]">
+            The whole loop, including the hard parts
+          </h2>
+        </div>
+        <div className="lg:col-span-7">
+          <p className="body-light mb-6">
+            Computer Science from NUST. I work as a Forward Deployed Engineer: embed with the problem,
+            make the product calls, and own the system after it is live. Architecture and security
+            are part of that job, not a separate slide.
+          </p>
+          <p className="body-light mb-10">
+            That means service design, tenant isolation, Row-Level Security, identity and access,
+            edge hardening with WAF and rate limits, and the docs and SLAs a production platform needs.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {loops.map((item) => (
+              <div key={item.title} className="panel-quiet p-5">
+                <h3 className="text-bone text-lg font-normal mb-2">{item.title}</h3>
+                <p className="text-sm font-extralight text-silver leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

@@ -1,18 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
+import TechCore from './TechCore'
 
 const Hero = () => {
   const scrollToContact = () => {
-    const element = document.querySelector('#contact')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const downloadResume = () => {
-    // You can replace this with your actual resume file
     const link = document.createElement('a')
     link.href = '/Hammad_Ahmed_Resume.pdf'
     link.download = 'Hammad_Ahmed_Resume.pdf'
@@ -20,132 +15,33 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="screen-safe-min gradient-bg flex items-center justify-center relative overflow-hidden pt-20 pb-12 sm:pb-8">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            rotate: 360,
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-20 left-20 w-32 h-32 border border-blue-400/20 rounded-full"
-        />
-        <motion.div
-          animate={{
-            rotate: -360,
-            scale: [1, 0.8, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute bottom-20 right-20 w-24 h-24 border border-purple-400/20 rounded-full"
-        />
-        <motion.div
-          animate={{
-            y: [-20, 20, -20],
-            x: [-10, 10, -10],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-xl"
-        />
+    <section id="home" className="relative min-h-[100svh] flex items-center pt-24 pb-10">
+      <div className="page-wrap grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-6 lg:gap-10 items-center w-full">
+        <div className="relative z-10 max-w-xl">
+          <p className="kicker">Forward Deployed Engineer</p>
+          <h1 className="display text-[42px] sm:text-[64px] lg:text-[78px] leading-[1.05] mb-6">
+            Hammad Ahmed
+          </h1>
+          <p className="body-light max-w-md mb-3">
+            I take a client problem through architecture, security, and code, then stay on it in production.
+          </p>
+          <p className="text-sm sm:text-base font-extralight text-ash mb-8">
+            2+ years shipping multi-tenant SaaS and AI products for GCC and European teams.
+          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+            <button onClick={scrollToContact} className="btn-pill">
+              Send email
+            </button>
+            <button onClick={downloadResume} className="link-ghost text-sm font-normal uppercase tracking-nav text-left">
+              Get resume
+            </button>
+          </div>
+        </div>
+
+        <div className="relative h-[300px] sm:h-[420px] lg:h-[520px] overflow-hidden">
+          <TechCore interactive className="absolute inset-0" />
+        </div>
       </div>
-
-      <div className="container-max text-center z-10 px-1 sm:px-0">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6 sm:space-y-8"
-        >
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
-          >
-            Hi There! I'm{' '}
-            <span className="gradient-text">Hammad</span>
-          </motion.h1>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl sm:text-2xl md:text-4xl text-gray-300 mb-6 sm:mb-8 font-light"
-          >
-            I'm a Full Stack Software Engineer
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed px-2 sm:px-0"
-          >
-            Senior Software Engineer focused on building scalable SaaS products and microservices, with hands-on experience delivering secure multi-tenant platforms for GCC and European markets.
-          </motion.p>
-
-          {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={scrollToContact}
-              className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <FaEnvelope className="w-5 h-5" />
-              Get In Touch
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={downloadResume}
-              className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <FaDownload className="w-5 h-5" />
-              Download Resume
-            </motion.button>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-3 bg-white/50 rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

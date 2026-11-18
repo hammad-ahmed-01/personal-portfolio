@@ -1,121 +1,83 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
-  }, [isMobileMenuOpen])
+  }, [open])
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Video', href: '#video-resume' },
+  const items = [
+    { name: 'Work', href: '#experience' },
+    { name: 'RAISC', href: '#startup' },
+    { name: 'Personal', href: '#personal' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Startup', href: '#startup' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ]
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-    setIsMobileMenuOpen(false)
+  const go = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    setOpen(false)
   }
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/10 backdrop-blur-md shadow-lg border-b border-white/20' 
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container-max px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-lg sm:text-2xl font-bold gradient-text"
-          >
-            Hammad Ahmed
-          </motion.div>
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0b0e13]/80 backdrop-blur-md">
+      <div className="page-wrap flex h-16 items-center justify-between">
+        <button
+          onClick={() => go('#home')}
+          className="text-sm font-normal tracking-tight text-bone"
+        >
+          Hammad Ahmed
+        </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.1 }}
-                onClick={() => scrollToSection(item.href)}
-                className="text-white hover:text-blue-400 transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </motion.button>
-            ))}
-          </div>
+        <nav className="hidden md:flex items-center gap-8">
+          {items.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => go(item.href)}
+              className="text-sm font-semibold uppercase tracking-nav text-ash hover:text-bone transition-colors"
+            >
+              {item.name}
+            </button>
+          ))}
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMobileMenuOpen}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/10 backdrop-blur-md rounded-lg mt-2 mb-3 overflow-hidden border border-white/20"
-          >
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3.5 text-white hover:bg-white/10 transition-colors duration-300 active:bg-white/20"
-              >
-                {item.name}
-              </motion.button>
-            ))}
-          </motion.div>
-        )}
+        <button
+          onClick={() => setOpen((value) => !value)}
+          className="md:hidden text-bone p-2"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d={open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+            />
+          </svg>
+        </button>
       </div>
-    </motion.nav>
+
+      {open && (
+        <div className="md:hidden border-t border-white/10 bg-[#0b0e13]/95 px-5 pb-4">
+          {items.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => go(item.href)}
+              className="block w-full py-3 text-left text-sm font-semibold uppercase tracking-nav text-ash hover:text-bone"
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+      )}
+    </header>
   )
 }
 
